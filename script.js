@@ -1,5 +1,6 @@
 let field = document.getElementById("field");
 let drawing = field.getContext("2d");
+let restartb = document.getElementById("restart")
 
 document.onkeydown = function(event){keypress(event.key)}
 
@@ -28,7 +29,7 @@ let length = 1;
 let direction = ">";
 let px = 0;
 let py = 0;
-let alive = true;
+let alive = false;
 
 function keypress (kdir) {
     if (kdir === "w"){
@@ -186,10 +187,10 @@ function restart(){
 
     for (let i = 0; i < 4; i++){
         jablicko()
+    restartb.innerHTML = "restart";
     }
 }
 
-restart();
 setInterval(function(){
     if (alive){
         alive = move();
