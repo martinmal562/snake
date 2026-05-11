@@ -1,0 +1,58 @@
+
+.body{
+    display: inline-block;
+}
+
+.snake{
+    background-color: #363636;
+    border-radius: 10%;
+    margin: 10px;
+    padding: 40px;
+}
+
+.button{
+    border-radius: 10%;
+    border-color: black;
+    background-color: #999e9b;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+}
+
+.restart{
+    border-radius: 10%;
+    border-color: black;
+    background-color: #999e9b;
+    width: 150px;
+    height: 60px;
+    font-size: 24px;
+}
+
+.controls{
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.up{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.left{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.down{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.right{
+    grid-column: 3;
+    grid-row: 2;
+}

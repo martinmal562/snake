@@ -6,17 +6,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
-    <dir>
+<body class="body">
+    <div class="snake">
         <canvas id="field" width="400" height="400"></canvas>
         <br>
-        <button onclick="restart()">restart</button>
-        <button onclick="keypress('w')">A</button>
-        <button onclick="keypress('s')">V</button>
-        <button onclick="keypress('a')">&lt</button>
-        <button onclick="keypress('d')">&gt</button>
-        <p id = dead></p>
-    </dir>
+        <button onclick="restart()" class="restart">restart</button>
+
+        <div class="controls"> 
+            <button onclick="keypress('w')" class="button up">A</button>
+            <button onclick="keypress('s')" class="button down">V</button>
+            <button onclick="keypress('a')" class="button left">&lt</button>
+            <button onclick="keypress('d')" class="button right">&gt</button>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
