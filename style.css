@@ -1,3 +1,6 @@
+body {
+  font-family: 'Google Sans Flex', sans-serif;
+}
 
 .body{
     display: inline-block;
@@ -17,6 +20,7 @@
     width: 60px;
     height: 60px;
     font-size: 24px;
+    font-family: 'Google Sans Flex', sans-serif !important;
 }
 
 .restart{
@@ -26,6 +30,7 @@
     width: 150px;
     height: 60px;
     font-size: 24px;
+    font-family: 'Google Sans Flex', sans-serif !important;
 }
 
 .controls{
