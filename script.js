@@ -1,12 +1,12 @@
-let field = document.getElementById("field");
-let drawing = field.getContext("2d");
-let restartb = document.getElementById("restart")
+let snakeField = document.getElementById("field");
+let snakeDrawing = snakeField.getContext("2d");
+let snakeRestartb = document.getElementById("restart")
 
-document.onkeydown = function(event){keypress(event.key)}
+document.onkeydown = function(event){snakeKeypress(event.key)}
 
 
 
-let grid = [
+let snakeGrid = [
 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -25,143 +25,141 @@ let grid = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 ];
 
-let length = 1;
-let direction = ">";
-let px = 0;
-let py = 0;
-let alive = false;
+let snakeLength = 1;
+let snakeDirection = ">";
+let snakePx = 0;
+let snakePy = 0;
+let snakeAlive = false;
 
-function keypress (kdir) {
-    if (kdir === "w"){
-        direction = "A";
+function snakeKeypress (snakeKdir) {
+    if (snakeKdir === "w"){
+        snakeDirection = "A";
     }
-    else if (kdir === "s"){
-        direction = "V";
+    else if (snakeKdir === "s"){
+        snakeDirection = "V";
     }
-    else if (kdir === "a"){
-        direction = "<";
+    else if (snakeKdir === "a"){
+        snakeDirection = "<";
     }
-    else if (kdir === "d"){
-        direction = ">";
+    else if (snakeKdir === "d"){
+        snakeDirection = ">";
     }
 }
 
-function jablicko() {
-    if (256-length-4 <= 0) {
+function snakeJablicko() {
+    if (256-snakeLength-4 <= 0) {
         return;
     }
-    let poz = Math.floor(Math.random() * (0, 256-length-4));
-    let sy = 0;
-    let sx = 0;
-    while (poz >=0){
-        if (grid[sy][sx] === 0){
-            poz -=1;
+    let snakePoz = Math.floor(Math.random() * (256-snakeLength-4));
+    let snakeSy = 0;
+    let snakeSx = 0;
+    while (snakePoz >=0){
+        if (snakeGrid[snakeSy][snakeSx] === 0){
+            snakePoz -=1;
         }
-        if (poz >= 0){
-            sx += 1;
-            if (sx >= 16){
-                sy += 1;
-                sx = 0;
+        if (snakePoz >= 0){
+            snakeSx += 1;
+            if (snakeSx >= 16){
+                snakeSy += 1;
+                snakeSx = 0;
             }
         }
     }
-    grid[sy][sx] = -1;
+    snakeGrid[snakeSy][snakeSx] = -1;
 }
 
-function move(){
-    for (let iy = 0; iy < grid.length; iy++){  
-        for (let ix = 0; ix <grid[0].length; ix++){
-            if (grid[iy][ix]>0){
-                grid[iy][ix] -= 1;
+function snakeMove(){
+    for (let iy = 0; iy < snakeGrid.length; iy++){  
+        for (let ix = 0; ix <snakeGrid[0].length; ix++){
+            if (snakeGrid[iy][ix]>0){
+                snakeGrid[iy][ix] -= 1;
             }
             else{
             }
         }
     }
-    if (direction === "A"){
-        if (py-1 < 0 || grid[py-1][px] > 0){
-            die();
+    if (snakeDirection === "A"){
+        if (snakePy-1 < 0 || snakeGrid[snakePy-1][snakePx] > 0){
+            snakeDie();
             return false;
         }
-        else if (grid[py-1][px] === -1){
-            length +=1;
-            jablicko();
+        else if (snakeGrid[snakePy-1][snakePx] === -1){
+            snakeLength +=1;
+            snakeJablicko();
         }
-        grid[py-1][px] = length;
-        py-=1;
+        snakeGrid[snakePy-1][snakePx] = snakeLength;
+        snakePy-=1;
     }
-    else if (direction === "V"){
-        if (py+1 > grid.length-1 || grid[py+1][px] > 0){
-            die();
+    else if (snakeDirection === "V"){
+        if (snakePy+1 > snakeGrid.length-1 || snakeGrid[snakePy+1][snakePx] > 0){
+            snakeDie();
             return false;
         }
-        else if (grid[py+1][px] === -1){
-            length +=1;
-            jablicko()
+        else if (snakeGrid[snakePy+1][snakePx] === -1){
+            snakeLength +=1;
+            snakeJablicko()
         }
-        grid[py+1][px] = length;
-        py+=1;
+        snakeGrid[snakePy+1][snakePx] = snakeLength;
+        snakePy+=1;
     }
-    else if (direction === "<"){
-        if (px-1 < 0 || grid[py][px-1] > 0){
-            die();
+    else if (snakeDirection === "<"){
+        if (snakePx-1 < 0 || snakeGrid[snakePy][snakePx-1] > 0){
+            snakeDie();
             return false;
         }
-        else if (grid[py][px-1] === -1){
-            length +=1;
-            jablicko();
+        else if (snakeGrid[snakePy][snakePx-1] === -1){
+            snakeLength +=1;
+            snakeJablicko();
         }
-        grid[py][px-1] = length;
-        px-=1;
+        snakeGrid[snakePy][snakePx-1] = snakeLength;
+        snakePx-=1;
     }
-    else if (direction === ">"){
-        if (px+1 > grid[0].length-1 || grid[py][px+1] > 0){
-            die();
+    else if (snakeDirection === ">"){
+        if (snakePx+1 > snakeGrid[0].length-1 || snakeGrid[snakePy][snakePx+1] > 0){
+            snakeDie();
             return false;
         }
-        else if (grid[py][px+1] === -1){
-            length +=1;
-            jablicko();
+        else if (snakeGrid[snakePy][snakePx+1] === -1){
+            snakeLength +=1;
+            snakeJablicko();
         }
-        grid[py][px+1] = length;
-        px+=1;
+        snakeGrid[snakePy][snakePx+1] = snakeLength;
+        snakePx+=1;
     }
     return true;
 }
 
-function die(){
-    drawing.fillStyle = "#a13535"
-    drawing.fillRect(0, 0, 400, 400);
+function snakeDie(){
+    snakeDrawing.fillStyle = "#a13535"
+    snakeDrawing.fillRect(0, 0, 400, 400);
 }
 
-function draw(){
-    for (let y = 0; y < grid.length; y++) {
-        for (let x = 0; x < grid[0].length; x++){
-            if (grid[y][x]===0){
-                drawing.fillStyle = "grey";
-                drawing.fillRect(x*25, y*25, 25, 25);
+function snakeDraw(){
+    for (let y = 0; y < snakeGrid.length; y++) {
+        for (let x = 0; x < snakeGrid[0].length; x++){
+            if (snakeGrid[y][x]===0){
+                snakeDrawing.fillStyle = "grey";
+                snakeDrawing.fillRect(x*25, y*25, 25, 25);
             }
-            else if(grid[y][x]===length){
-                drawing.fillStyle = "#268f00";
-                drawing.fillRect(x*25, y*25, 25, 25);
+            else if(snakeGrid[y][x]===snakeLength){
+                snakeDrawing.fillStyle = "#268f00";
+                snakeDrawing.fillRect(x*25, y*25, 25, 25);
             }
-            else if (grid[y][x]===-1){
-                drawing.fillStyle = "red";
-                drawing.fillRect(x*25, y*25, 25, 25);
+            else if (snakeGrid[y][x]===-1){
+                snakeDrawing.fillStyle = "red";
+                snakeDrawing.fillRect(x*25, y*25, 25, 25);
 
             }
-            else if(grid[y][x]>0){
-                drawing.fillStyle = "#3de600";
-                drawing.fillRect(x*25, y*25, 25, 25);
+            else if(snakeGrid[y][x]>0){
+                snakeDrawing.fillStyle = "#3de600";
+                snakeDrawing.fillRect(x*25, y*25, 25, 25);
             }
-
-        
         }
     }
 }
 
-function restart(){
-    grid = [
+function snakeRestart(){
+    snakeGrid = [
     [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -179,24 +177,24 @@ function restart(){
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     ];
-    length=1;
-    alive=true;
-    direction = ">";
-    px = 0;
-    py = 0;
+    snakeLength=1;
+    snakeAlive=true;
+    snakeDirection = ">";
+    snakePx = 0;
+    snakePy = 0;
 
     for (let i = 0; i < 4; i++){
-        jablicko()
-    restartb.innerHTML = "restart";
+        snakeJablicko()
+    snakeRestartb.innerHTML = "restart";
     }
 }
 
 setInterval(function(){
-    if (alive){
-        alive = move();
-        draw();
+    if (snakeAlive){
+        snakeAlive = snakeMove();
+        snakeDraw();
     }
     else {
-        die();
+        snakeDie();
     }
 }, 500)
