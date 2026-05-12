@@ -4,6 +4,7 @@ body {
 
 .body{
     display: inline-block;
+    background-color: #2e2e2e;
 }
 
 .snake{
@@ -11,6 +12,7 @@ body {
     border-radius: 10%;
     margin: 10px;
     padding: 40px;
+    box-shadow: 0 0 30px 5px rgba(184, 184, 184, 0.2)
 }
 
 .button{
