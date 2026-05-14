@@ -1,6 +1,6 @@
-let snakeField = document.getElementById("field");
+let snakeField = document.getElementById("snakefield");
 let snakeDrawing = snakeField.getContext("2d");
-let snakeRestartb = document.getElementById("restart")
+let snakeRestartb = document.getElementById("snakerestart")
 
 document.onkeydown = function(event){snakeKeypress(event.key)}
 

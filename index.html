@@ -12,17 +12,61 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body class="body">
-    <div class="snake">
+    <div class="game">
         <h1>SNAKE</h1>
-        <canvas id="field" width="400" height="400"></canvas>
+        <canvas id="snakefield" width="400" height="400"></canvas>
         <br>
-        <button onclick="snakeRestart()" class="restart" id="restart">start</button>
+        <button onclick="snakeRestart()" class="restart" id="snakerestart">start</button>
 
-        <div class="controls"> 
+        <div class="snakecontrols"> 
             <button onclick="snakeKeypress('w')" class="button up">A</button>
             <button onclick="snakeKeypress('s')" class="button down">V</button>
             <button onclick="snakeKeypress('a')" class="button left">&lt</button>
             <button onclick="snakeKeypress('d')" class="button right">&gt</button>
+        </div>
+    </div>
+    <div class="game">
+        <h1>HANGMAN</h1>
+        <canvas id="hangfield" width="400" height="350"></canvas>
+        <br>
+        <canvas id="hangword" width="400" height="50"></canvas>
+        <br>
+        <button onclick="snakeRestart()" class="restart" id="restart">start</button>
+
+
+        <div class="hangcontrolsT"> 
+            <button onclick="hangKeypress('q')" class="keybutton q">Q</button>
+            <button onclick="hangKeypress('w')" class="keybutton w">W</button>
+            <button onclick="hangKeypress('e')" class="keybutton e">E</button>
+            <button onclick="hangKeypress('r')" class="keybutton r">R</button>
+            <button onclick="hangKeypress('t')" class="keybutton t">T</button>
+            <button onclick="hangKeypress('y')" class="keybutton y">Y</button>
+            <button onclick="hangKeypress('u')" class="keybutton u">U</button>
+            <button onclick="hangKeypress('i')" class="keybutton i">I</button>
+            <button onclick="hangKeypress('o')" class="keybutton o">O</button>
+            <button onclick="hangKeypress('p')" class="keybutton p">P</button>
+        </div>
+        <div class="hangcontrolsM"> 
+            <button onclick="hangKeypress('a')" class="keybutton q">A</button>
+            <button onclick="hangKeypress('s')" class="keybutton w">S</button>
+            <button onclick="hangKeypress('d')" class="keybutton e">D</button>
+            <button onclick="hangKeypress('f')" class="keybutton r">F</button>
+            <button onclick="hangKeypress('g')" class="keybutton t">G</button>
+            <button onclick="hangKeypress('h')" class="keybutton y">H</button>
+            <button onclick="hangKeypress('j')" class="keybutton u">J</button>
+            <button onclick="hangKeypress('k')" class="keybutton i">K</button>
+            <button onclick="hangKeypress('l')" class="keybutton o">L</button>
+        </div>
+        <div class="hangcontrolsM"> 
+            <button onclick="hangKeypress('Backspace')" class="keybutton q">⌫</button>
+            <button onclick="hangKeypress('z')" class="keybutton w">Z</button>
+            <button onclick="hangKeypress('x')" class="keybutton e">X</button>
+            <button onclick="hangKeypress('c')" class="keybutton r">C</button>
+            <button onclick="hangKeypress('v')" class="keybutton t">V</button>
+            <button onclick="hangKeypress('b')" class="keybutton y">B</button>
+            <button onclick="hangKeypress('n')" class="keybutton u">N</button>
+            <button onclick="hangKeypress('m')" class="keybutton i">M</button>
+            <button onclick="hangKeypress('Enter')" class="keybutton o">↵</button>
         </div>
     </div>
 </body>

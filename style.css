@@ -3,11 +3,11 @@ body {
 }
 
 .body{
-    display: inline-block;
+    display: inline-flex;
     background-color: #2e2e2e;
 }
 
-.snake{
+.game{
     background-color: #363636;
     border-radius: 10%;
     margin: 10px;
@@ -25,6 +25,16 @@ body {
     font-family: 'Google Sans Flex', sans-serif !important;
 }
 
+.keybutton{
+    border-radius: 10%;
+    border-color: black;
+    background-color: #999e9b;
+    width: 35px;
+    height: 60px;
+    font-size: 24px;
+    font-family: 'Google Sans Flex', sans-serif !important;
+}
+
 .restart{
     border-radius: 10%;
     border-color: black;
@@ -35,13 +45,22 @@ body {
     font-family: 'Google Sans Flex', sans-serif !important;
 }
 
-.controls{
+.hangcontrolsT{
     display: grid;
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 60px 60px;
-    gap: 10px;
+    grid-template-columns: repeat(10, 35px);
+    grid-template-rows: 60px;
+    gap: 5px;
     justify-content: center;
     margin-top: 20px;
+}
+
+.hangcontrolsM{
+    display: grid;
+    grid-template-columns: repeat(9, 35px);
+    grid-template-rows: 60px;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 5px;
 }
 
 .up{
@@ -63,3 +82,23 @@ body {
     grid-column: 3;
     grid-row: 2;
 }
+
+.snakecontrols{
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.q {grid-column: 1;}
+.w {grid-column: 2;}
+.e {grid-column: 3;}
+.r {grid-column: 4;}
+.t {grid-column: 5;}
+.y {grid-column: 6;}
+.u {grid-column: 7;}
+.i {grid-column: 8;}
+.o {grid-column: 9;}
+.p {grid-column: 10;}
