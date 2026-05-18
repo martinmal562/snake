@@ -197,4 +197,4 @@ setInterval(function(){
     else {
         snakeDie();
     }
-}, 500)
+}, 333)

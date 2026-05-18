@@ -13,7 +13,7 @@
 </head>
 <body class="body">
     <div class="game">
-        <h1>SNAKE</h1>
+        <h1 class="gamehead">SNAKE</h1>
         <canvas id="snakefield" width="400" height="400"></canvas>
         <br>
         <button onclick="snakeRestart()" class="restart" id="snakerestart">start</button>
@@ -26,12 +26,12 @@
         </div>
     </div>
     <div class="game">
-        <h1>HANGMAN</h1>
+        <h1 class="gamehead">HANGMAN</h1>
         <canvas id="hangfield" width="400" height="350"></canvas>
         <br>
         <canvas id="hangword" width="400" height="50"></canvas>
         <br>
-        <button onclick="snakeRestart()" class="restart" id="restart">start</button>
+        <button onclick="hangRestart()" class="restart" id="hangrestart">start</button>
 
 
         <div class="hangcontrolsT"> 
@@ -58,7 +58,6 @@
             <button onclick="hangKeypress('l')" class="keybutton o">L</button>
         </div>
         <div class="hangcontrolsM"> 
-            <button onclick="hangKeypress('Backspace')" class="keybutton q">⌫</button>
             <button onclick="hangKeypress('z')" class="keybutton w">Z</button>
             <button onclick="hangKeypress('x')" class="keybutton e">X</button>
             <button onclick="hangKeypress('c')" class="keybutton r">C</button>
@@ -66,7 +65,6 @@
             <button onclick="hangKeypress('b')" class="keybutton y">B</button>
             <button onclick="hangKeypress('n')" class="keybutton u">N</button>
             <button onclick="hangKeypress('m')" class="keybutton i">M</button>
-            <button onclick="hangKeypress('Enter')" class="keybutton o">↵</button>
         </div>
     </div>
 </body>
