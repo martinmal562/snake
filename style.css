@@ -1,18 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
   font-family: 'Google Sans Flex', sans-serif;
 }
 
 .body{
-    display: inline-flex;
     background-color: #2e2e2e;
+}
+
+.header {
+    background-color: #171717;
+    color: #e0e0e0;
+    text-align: center;
+    height: 150px;
+}
+
+.pagetitle{
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.games {
+    display: inline-flex;
 }
 
 .game{
     background-color: #363636;
     border-radius: 10%;
-    margin: 10px;
-    padding: 40px;
-    box-shadow: 0 0 30px 5px rgba(184, 184, 184, 0.2)
+    margin: 50px;
+    padding: 50px;
+    box-shadow: 0 0 30px 5px rgba(220, 220, 220, 0.5)
 }
 
 .gamehead{

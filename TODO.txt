@@ -1,8 +1,8 @@
 Rest of page
 
 Snake Title and Lose screen
-Snake instruction
+Snake instruction?
 
-Hangman Hanging screens
+
 Hangman Title, Win, Lose screen
-Hangman instruction
+Hangman instruction?
