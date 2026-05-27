@@ -6,6 +6,5 @@ Snake instruction?
 
 
 hangman Win Lose condicion
-hangman Button graying
 Hangman Title, Win, Lose screen
 Hangman instruction?

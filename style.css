@@ -66,6 +66,11 @@ body {
     font-family: 'Google Sans Flex', sans-serif !important;
 }
 
+.keybutton.pressed {
+    background-color: black; 
+    color: white;
+}
+
 .restart{
     border-radius: 10%;
     border-color: black;

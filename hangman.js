@@ -8,6 +8,8 @@ let hangLetterIn = false;
 let hangGuessWord;
 let hangRestBut = document.getElementById("hangrestart")
 
+document.onkeydown = function(event){hangKeypress(event.key)};
+
 function hangRestart(){
     hangRestBut.innerHTML = "restart"
     hangCurrentWord= hangmanWords[Math.floor(Math.random() * hangmanWords.length)].toLowerCase();
@@ -15,16 +17,25 @@ function hangRestart(){
     hangFaze=0;
     hangWordDraw();
     hangPicDraw();
+
+    let pressedButtons = document.querySelectorAll('.keybutton.pressed');
+    pressedButtons.forEach(button => {
+        button.classList.remove('pressed');
+    });
 }
 
 function hangKeypress(key) {
+    let button = document.getElementById(key);
+        if (button) {
+            button.classList.add('pressed');
+        }
+
     for (let i = 0; i < hangCurrentWord.length; i++) {
         if (hangCurrentWord[i] === key){
             hangLetterIn = true;
             hangGuessWord[i] = key;
             hangWordDraw();
         }
-        
     }
     if (!hangLetterIn){
             hangFaze += 1;
