@@ -24,6 +24,35 @@ function hangRestart(){
     });
 }
 
+function hangLoseCheck(){
+    if (hangFaze >= 9){
+        hangGuessWord = hangCurrentWord;
+        hangWordDraw();
+        
+        let img = new Image();
+        img.src = `hangmanimg/${hangFaze}.jpg`; 
+        
+        img.onload = function() {
+            hangPicDrawing.clearRect(0, 50, 400, 300); 
+            hangPicDrawing.drawImage(img, 40, 60, 320, 280); 
+        };
+
+        setTimeout(function() {
+            hangPicDrawing.font = "30px 'Google Sans Flex'";
+            hangPicDrawing.fillStyle = "red";
+            hangPicDrawing.fillText("u dead", 100, 100);
+        }, (100));
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+function hangWinCheck(){
+
+}
+
 function hangKeypress(key) {
     let button = document.getElementById(key);
         if (button) {
@@ -39,7 +68,9 @@ function hangKeypress(key) {
     }
     if (!hangLetterIn){
             hangFaze += 1;
+            if(hangLoseCheck()){
             hangPicDraw();
+            }
         }
     hangLetterIn = false;
 
