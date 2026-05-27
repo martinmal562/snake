@@ -8,7 +8,9 @@ let hangLetterIn = false;
 let hangGuessWord;
 let hangRestBut = document.getElementById("hangrestart")
 
-document.onkeydown = function(event){hangKeypress(event.key)};
+document.addEventListener('keydown', function(event) {
+    hangKeypress(event.key);
+});
 
 function hangRestart(){
     hangRestBut.innerHTML = "restart"

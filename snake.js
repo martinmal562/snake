@@ -3,9 +3,9 @@ let snakeDrawing = snakeField.getContext("2d");
 let snakeRestartb = document.getElementById("snakerestart");
 let snakeScore = document.getElementById("snakeScore");
 
-document.onkeydown = function(event){snakeKeypress(event.key)};
-
-
+document.addEventListener('keydown', function(event) {
+    snakeKeypress(event.key);
+});
 
 let snakeGrid = [
 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],

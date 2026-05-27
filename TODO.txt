@@ -5,6 +5,6 @@ Snake Title and Lose screen
 Snake instruction?
 
 
-hangman Win Lose condicion
+hangman Win condicion
 Hangman Title, Win, Lose screen
 Hangman instruction?
