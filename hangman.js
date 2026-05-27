@@ -52,7 +52,11 @@ function hangLoseCheck(){
 }
 
 function hangWinCheck(){
-
+    if(!hangGuessWord.includes("_")){
+        hangPicDrawing.font = "30px 'Google Sans Flex'";
+        hangPicDrawing.fillStyle = "green";
+        hangPicDrawing.fillText("u win", 100, 100);
+    }
 }
 
 function hangKeypress(key) {
@@ -74,6 +78,7 @@ function hangKeypress(key) {
             hangPicDraw();
             }
         }
+    hangWinCheck();
     hangLetterIn = false;
 
 }
