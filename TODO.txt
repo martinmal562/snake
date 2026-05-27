@@ -1,8 +1,11 @@
 Rest of page
 
+
 Snake Title and Lose screen
 Snake instruction?
 
 
+hangman Win Lose condicion
+hangman Button graying
 Hangman Title, Win, Lose screen
 Hangman instruction?

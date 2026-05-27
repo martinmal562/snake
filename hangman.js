@@ -12,8 +12,6 @@ function hangRestart(){
     hangRestBut.innerHTML = "restart"
     hangCurrentWord= hangmanWords[Math.floor(Math.random() * hangmanWords.length)].toLowerCase();
     hangGuessWord = Array(hangCurrentWord.length).fill("_");
-    console.log(hangCurrentWord);
-    console.log(hangGuessWord);
     hangFaze=0;
     hangWordDraw();
     hangPicDraw();
@@ -30,7 +28,6 @@ function hangKeypress(key) {
     }
     if (!hangLetterIn){
             hangFaze += 1;
-            console.log(hangFaze)
             hangPicDraw();
         }
     hangLetterIn = false;

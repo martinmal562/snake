@@ -1,8 +1,9 @@
 let snakeField = document.getElementById("snakefield");
 let snakeDrawing = snakeField.getContext("2d");
-let snakeRestartb = document.getElementById("snakerestart")
+let snakeRestartb = document.getElementById("snakerestart");
+let snakeScore = document.getElementById("snakeScore");
 
-document.onkeydown = function(event){snakeKeypress(event.key)}
+document.onkeydown = function(event){snakeKeypress(event.key)};
 
 
 
@@ -135,6 +136,7 @@ function snakeDie(){
 }
 
 function snakeDraw(){
+    snakeScore.innerText = "Score: " + snakeLength;
     for (let y = 0; y < snakeGrid.length; y++) {
         for (let x = 0; x < snakeGrid[0].length; x++){
             if (snakeGrid[y][x]===0){
