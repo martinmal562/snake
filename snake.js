@@ -31,6 +31,7 @@ let snakeDirection = ">";
 let snakePx = 0;
 let snakePy = 0;
 let snakeAlive = false;
+let snakeFirst = true;
 
 function snakeKeypress (snakeKdir) {
     if (snakeKdir === "w"){
@@ -46,6 +47,7 @@ function snakeKeypress (snakeKdir) {
         snakeDirection = ">";
     }
 }
+
 
 function snakeJablicko() {
     if (256-snakeLength-4 <= 0) {
@@ -131,8 +133,19 @@ function snakeMove(){
 }
 
 function snakeDie(){
-    snakeDrawing.fillStyle = "#a13535"
-    snakeDrawing.fillRect(0, 0, 400, 400);
+    if (!snakeFirst){
+        snakeDrawing.font = "30px 'Google Sans Flex'";
+        snakeDrawing.fillStyle = "#0000ff";
+        snakeDrawing.fillText("u dead", 100, 100);
+        snakeDrawing.fillText(`Score: ${snakeLength}`, 100, 150);
+    }
+    else{
+        snakeDrawing.fillStyle = "#13acf6"
+        snakeDrawing.fillRect(0, 0, 400, 400)
+        snakeDrawing.font = "30px 'Google Sans Flex'";
+        snakeDrawing.fillStyle = "#0000ff";
+        snakeDrawing.fillText("snake", 100, 100);
+    }
 }
 
 function snakeDraw(){
@@ -161,6 +174,7 @@ function snakeDraw(){
 }
 
 function snakeRestart(){
+    snakeFirst = false;
     snakeGrid = [
     [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],

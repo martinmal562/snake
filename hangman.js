@@ -12,6 +12,8 @@ document.addEventListener('keydown', function(event) {
     hangKeypress(event.key);
 });
 
+
+
 function hangRestart(){
     hangRestBut.innerHTML = "restart"
     hangCurrentWord= hangmanWords[Math.floor(Math.random() * hangmanWords.length)].toLowerCase();
@@ -19,6 +21,7 @@ function hangRestart(){
     hangFaze=0;
     hangWordDraw();
     hangPicDraw();
+    console.log(hangCurrentWord);
 
     let pressedButtons = document.querySelectorAll('.keybutton.pressed');
     pressedButtons.forEach(button => {
@@ -41,7 +44,7 @@ function hangLoseCheck(){
 
         setTimeout(function() {
             hangPicDrawing.font = "30px 'Google Sans Flex'";
-            hangPicDrawing.fillStyle = "red";
+            hangPicDrawing.fillStyle = "#ff0000";
             hangPicDrawing.fillText("u dead", 100, 100);
         }, (100));
         return false;
@@ -54,7 +57,7 @@ function hangLoseCheck(){
 function hangWinCheck(){
     if(!hangGuessWord.includes("_")){
         hangPicDrawing.font = "30px 'Google Sans Flex'";
-        hangPicDrawing.fillStyle = "green";
+        hangPicDrawing.fillStyle = "#00ff00";
         hangPicDrawing.fillText("u win", 100, 100);
     }
 }
