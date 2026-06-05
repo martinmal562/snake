@@ -201,7 +201,7 @@ function snakeRestart(){
 
     for (let i = 0; i < 4; i++){
         snakeJablicko()
-    snakeRestartb.innerHTML = "restart";
+    snakeRestartb.innerHTML = "RESTART";
     }
 }
 

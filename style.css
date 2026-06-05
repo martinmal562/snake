@@ -29,7 +29,8 @@ body {
 }
 
 .games {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
 }
 
 .game{
@@ -138,3 +139,22 @@ body {
 .i {grid-column: 8;}
 .o {grid-column: 9;}
 .p {grid-column: 10;}
+
+.footer {
+    background-color: #171717;
+    text-align: center;
+}
+
+.line {
+     color: #999e9b !important; 
+    background-color: #999e9b !important;   
+    height: 10px;
+    border-color: #999e9b !important;
+    margin: 0px;
+    border-width: 1px;
+}
+
+.foottext {
+    color: #999e9b;
+    font-size: 20px;
+}

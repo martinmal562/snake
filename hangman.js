@@ -12,10 +12,21 @@ document.addEventListener('keydown', function(event) {
     hangKeypress(event.key);
 });
 
+document.fonts.ready.then(function () {
+    hangStart();
+});
+
+function hangStart(){
+    hangPicDrawing.fillStyle = "#13acf6"
+    hangPicDrawing.fillRect(0, 0, 400, 400)
+    hangPicDrawing.font = "30px 'Google Sans Flex'";
+    hangPicDrawing.fillStyle = "#0000ff";
+    hangPicDrawing.fillText("hangman", 100, 100);
+}
 
 
 function hangRestart(){
-    hangRestBut.innerHTML = "restart"
+    hangRestBut.innerHTML = "RESTART"
     hangCurrentWord= hangmanWords[Math.floor(Math.random() * hangmanWords.length)].toLowerCase();
     hangGuessWord = Array(hangCurrentWord.length).fill("_");
     hangFaze=0;
@@ -91,7 +102,7 @@ function hangPicDraw(){
     img.src = `hangmanimg/${hangFaze}.jpg`; 
     
     img.onload = function() {
-        hangPicDrawing.clearRect(0, 50, 400, 300); 
+        hangPicDrawing.clearRect(0, 0, 400, 350); 
         hangPicDrawing.drawImage(img, 40, 60, 320, 280); 
     };
 
